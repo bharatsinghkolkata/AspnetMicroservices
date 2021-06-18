@@ -33,7 +33,7 @@ namespace Catalog.API.Repository
                             .FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Product>> GetProductName(string name)
+        public async Task<IEnumerable<Product>> GetProductByName(string name)
         {
             FilterDefinition<Product> filter = Builders<Product>.Filter.Eq(p => p.Name, name);
             return await _context
