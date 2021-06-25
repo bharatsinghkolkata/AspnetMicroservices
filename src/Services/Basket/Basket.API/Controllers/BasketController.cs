@@ -17,8 +17,8 @@ namespace Basket.API.Controllers
     {
         private readonly IBasketRepository _repository;
      //   private readonly DiscountGrpcService _discountGrpcService;
-        private readonly IPublishEndpoint _publishEndpoint;
-        private readonly IMapper _mapper;
+      //  private readonly IPublishEndpoint _publishEndpoint;
+      //  private readonly IMapper _mapper;
 
         public BasketController(IBasketRepository repository)
         {
