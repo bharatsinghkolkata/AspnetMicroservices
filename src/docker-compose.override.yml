@@ -100,3 +100,16 @@ services:
     ports:
       - "8003:80"
 
+  ordering.api:
+    container_name: ordering.api
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - "ConnectionStrings:OrderingConnectionString=Data Source=DESKTOP-SBV7BD0;Initial Catalog=DemoDB;Integrated Security=True;"            
+        - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+        - "ElasticConfiguration:Uri=http://elasticsearch:9200"
+    depends_on:
+        - orderdb
+        - rabbitmq
+    ports:
+        - "8004:80"
+
